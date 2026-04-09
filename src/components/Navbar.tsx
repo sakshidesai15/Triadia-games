@@ -50,7 +50,7 @@ export default function Navbar() {
                 Triadia
               </div>
               <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
-                Federation Games
+                Game Federation
               </div>
             </div>
           </Link>

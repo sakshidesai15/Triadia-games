@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { Brain, Target, Zap } from 'lucide-react';
+import { Brain, Target, Zap, BookOpen, Activity, Users as UsersIcon } from 'lucide-react';
+import dynamicImage from '../assests/image4.jpeg';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -49,6 +50,69 @@ export default function About() {
               />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Dynamic View */}
+      <section className="relative py-24 bg-[linear-gradient(180deg,_#ffffff_0%,_#eef3ff_45%,_#ffffff_100%)] overflow-hidden">
+        <div className="absolute -top-20 -left-16 h-64 w-64 rounded-full bg-sky-300/30 blur-3xl"></div>
+        <div className="absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-amber-300/25 blur-3xl"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div {...fadeIn} className="mb-12">
+            <div className="text-[10px] font-bold text-secondary uppercase tracking-[0.5em] mb-4">Dynamic View</div>
+            <h2 className="text-3xl md:text-4xl font-black text-primary uppercase tracking-tight">Triadia In Action</h2>
+            <p className="text-gray-600 mt-4 max-w-3xl">
+              Empowering students through education, sport, and inclusive development across rural and urban communities.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center rounded-[2rem] border border-white/60 bg-white/85 shadow-[0_30px_80px_-45px_rgba(0,0,0,0.45)] p-8 lg:p-12 backdrop-blur"
+          >
+            <div className="relative">
+              <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-secondary/25 via-sky-200/60 to-emerald-200/60 blur-lg"></div>
+              <div className="relative overflow-hidden rounded-[20px] shadow-2xl">
+                <img
+                  src={dynamicImage}
+                  alt="Triadia in action"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/45 via-transparent to-transparent"></div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold text-primary mb-4">Equal Opportunity Through Sport</h3>
+              <p className="text-gray-600 mb-6">
+                We create pathways for students from rural and urban backgrounds to grow through education, sport, and
+                competition at state, national, and international levels.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: BookOpen, title: 'Education Excellence' },
+                  { icon: Target, title: 'Skill Development' },
+                  { icon: Brain, title: 'Mental Strength' },
+                  { icon: Activity, title: 'Physical Fitness' },
+                  { icon: UsersIcon, title: 'Social Responsibility' }
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="group flex items-center gap-3 rounded-xl border border-gray-100 bg-white/90 px-4 py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-secondary/30"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary via-[#0b3a72] to-[#164d7a] text-secondary flex items-center justify-center group-hover:from-secondary group-hover:to-amber-300 group-hover:text-primary transition-all">
+                      <item.icon className="w-5 h-5" />
+                    </div>
+                    <div className="text-sm font-semibold text-primary">{item.title}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

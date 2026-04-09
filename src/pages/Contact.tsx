@@ -32,9 +32,18 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
             {[
-              { icon: MapPin, title: 'Headquarters', detail: '123 Global Sports Plaza, Lausanne, Switzerland' },
-              { icon: Mail, title: 'Email Support', detail: 'contact@triadiagames.org' },
-              { icon: Phone, title: 'Phone Support', detail: '+41 21 123 45 67' }
+              { icon: MapPin, title: 'Headquarters', detail: 'Amaravati, Andhra Pradesh, India' },
+              { icon: Mail, title: 'Email Support', detail: 'info@triadia.org' },
+              { 
+                icon: Phone, 
+                title: 'Phone Support', 
+                detail: (
+                  <span className="block">
+                    Jaheeruddin: +91 96660 44498
+                    <span className="block">Ravikanth: +91 97044 44108</span>
+                  </span>
+                )
+              }
             ].map((item, i) => (
               <motion.div 
                 key={item.title}
@@ -132,6 +141,85 @@ export default function Contact() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Student Applications */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <motion.div {...fadeIn} className="text-center mb-12">
+            <h2 className="text-2xl font-bold text-primary uppercase tracking-wider">Student Applications</h2>
+            <p className="text-gray-600 mt-4">
+              Apply to join Triadia student programs, training camps, and junior pathways.
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeIn} className="bg-white p-10 rounded-3xl border border-gray-100 shadow-sm">
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-primary uppercase tracking-widest">Full Name</label>
+                  <input type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-secondary transition-all" placeholder="Full Name" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-primary uppercase tracking-widest">Date of Birth</label>
+                  <input type="date" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-secondary transition-all" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-primary uppercase tracking-widest">Email Address</label>
+                  <input type="email" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-secondary transition-all" placeholder="name@email.com" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-primary uppercase tracking-widest">Phone Number</label>
+                  <input type="tel" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-secondary transition-all" placeholder="+91 XXXXX XXXXX" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-primary uppercase tracking-widest">City / State</label>
+                  <input type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-secondary transition-all" placeholder="City, State" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-primary uppercase tracking-widest">School / College</label>
+                  <input type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-secondary transition-all" placeholder="Institution Name" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-primary uppercase tracking-widest">Sport / Category</label>
+                  <select className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-secondary transition-all">
+                    <option>Sub-Junior</option>
+                    <option>Junior</option>
+                    <option>Senior</option>
+                    <option>Masters</option>
+                  </select>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-primary uppercase tracking-widest">Program Interest</label>
+                  <select className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-secondary transition-all">
+                    <option>Training Camp</option>
+                    <option>Competition Registration</option>
+                    <option>Scholarship / Support</option>
+                    <option>General Inquiry</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-xs font-bold text-primary uppercase tracking-widest">Message</label>
+                <textarea rows={5} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-secondary transition-all" placeholder="Tell us about your experience and goals."></textarea>
+              </div>
+
+              <button className="w-full bg-primary text-white py-5 rounded-xl font-bold uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all">
+                Submit Application
+              </button>
+            </form>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -20,7 +20,7 @@ export default function Footer() {
               <div className="leading-tight">
                 <div className="text-xl font-black tracking-[0.1em] uppercase">Triadia</div>
                 <div className="text-[11px] font-bold uppercase tracking-[0.28em] text-white/70">
-                  Federation Games
+                  Game Federation
                 </div>
               </div>
             </div>
@@ -75,7 +75,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3 text-gray-400">
                 <Phone className="w-5 h-5 text-secondary shrink-0" />
-                <span>+91-XXXXXXXXXX</span>
+                <span>Jaheeruddin: +91 96660 44498</span>
+              </li>
+              <li className="flex items-center space-x-3 text-gray-400">
+                <Phone className="w-5 h-5 text-secondary shrink-0" />
+                <span>Ravikanth: +91 97044 44108</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-400">
                 <Mail className="w-5 h-5 text-secondary shrink-0" />

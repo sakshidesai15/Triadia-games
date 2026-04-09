@@ -1,7 +1,15 @@
 import { motion } from 'motion/react';
-import { Newspaper, Image as ImageIcon, Video, Download } from 'lucide-react';
+import { Newspaper, Image as ImageIcon, Video, Download, BookOpen, Target, Brain, Activity, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import galleryImage1 from '../assests/image1 (2).jpeg';
 import galleryImage2 from '../assests/image 2.jpeg';
+import galleryImage3 from '../assests/image3.jpeg';
+import galleryImage6 from '../assests/WhatsApp Image 2026-04-06 at 11.49.13 AM.jpeg';
+import galleryImage7 from '../assests/WhatsApp Image 2026-04-06 at 11.50.27 AM.jpeg';
+import galleryImage8 from '../assests/WhatsApp Image 2026-04-06 at 11.50.47 AM.jpeg';
+import galleryImage9 from '../assests/WhatsApp Image 2026-04-06 at 11.51.14 AM.jpeg';
+import galleryImage10 from '../assests/WhatsApp Image 2026-04-06 at 11.55.15 AM.jpeg';
+import dynamicImage from '../assests/image4.jpeg';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -14,12 +22,12 @@ export default function Media() {
   const galleryImages = [
     galleryImage1,
     galleryImage2,
-    galleryImage1,
-    galleryImage2,
-    galleryImage1,
-    galleryImage2,
-    galleryImage1,
-    galleryImage2,
+    galleryImage3,
+    galleryImage6,
+    galleryImage7,
+    galleryImage8,
+    galleryImage9,
+    galleryImage10,
   ];
 
   return (
@@ -105,6 +113,83 @@ export default function Media() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Dynamic View */}
+      <section className="relative py-24 md:py-28 bg-[linear-gradient(180deg,_#ffffff_0%,_#eef3ff_45%,_#ffffff_100%)] overflow-hidden">
+        <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-sky-300/35 blur-3xl"></div>
+        <div className="absolute top-10 right-0 h-80 w-80 rounded-full bg-amber-300/30 blur-3xl"></div>
+        <div className="absolute -bottom-24 left-1/3 h-80 w-80 rounded-full bg-rose-300/25 blur-3xl"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div {...fadeIn} className="mb-12">
+            <div className="inline-flex items-center gap-3 rounded-full border border-secondary/30 bg-white/80 px-4 py-2 text-[10px] font-bold text-secondary uppercase tracking-[0.5em] shadow-sm">
+              Dynamic View
+              <span className="h-1.5 w-1.5 rounded-full bg-secondary"></span>
+              Triadia
+            </div>
+            <h3 className="text-3xl md:text-4xl font-black text-primary uppercase tracking-tight mt-5">
+              Triadia In Action
+            </h3>
+            <p className="text-gray-600 mt-4 max-w-3xl">
+              Empowering students through education, sport, and inclusive development across rural and urban communities.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center rounded-[2.25rem] border border-white/60 bg-white/80 shadow-[0_30px_80px_-45px_rgba(0,0,0,0.45)] p-8 lg:p-12 backdrop-blur"
+          >
+            <div className="relative">
+              <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-secondary/25 via-sky-200/60 to-emerald-200/60 blur-lg"></div>
+              <div className="relative overflow-hidden rounded-[20px] shadow-2xl">
+                <img
+                  src={dynamicImage}
+                  alt="Triadia in action"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/45 via-transparent to-transparent"></div>
+              </div>
+            </div>
+
+            <div>
+              <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-secondary mb-3">Mission Pillars</div>
+              <h4 className="text-2xl font-bold text-primary mb-4">Building Stronger Futures Through Sport</h4>
+              <p className="text-gray-600 mb-6">
+                Our programs focus on holistic growth — blending education, skill, mental resilience, physical fitness,
+                and social responsibility for every participant.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: BookOpen, title: 'Education Excellence' },
+                  { icon: Target, title: 'Skill Development' },
+                  { icon: Brain, title: 'Mental Strength' },
+                  { icon: Activity, title: 'Physical Fitness' },
+                  { icon: Users, title: 'Social Responsibility' }
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="group flex items-center gap-3 rounded-xl border border-gray-100 bg-white/90 px-4 py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-secondary/30"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary via-[#0b3a72] to-[#164d7a] text-secondary flex items-center justify-center group-hover:from-secondary group-hover:to-amber-300 group-hover:text-primary transition-all">
+                      <item.icon className="w-5 h-5" />
+                    </div>
+                    <div className="text-sm font-semibold text-primary">{item.title}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8">
+                <Link to="/membership-athletes" className="inline-flex items-center justify-center bg-secondary text-primary px-8 py-3 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-primary hover:text-white transition-all shadow-lg shadow-secondary/20">
+                  Explore Programs
+                </Link>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
